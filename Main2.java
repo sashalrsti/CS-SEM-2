@@ -25,7 +25,6 @@ public class Main2 {
         ArrayList<Integer> arr1 = new ArrayList<>(generateRandomArray(1000));
         ArrayList<Integer> arr2 = new ArrayList<>(arr1);
 
-
         System.out.println(arr1);
         PerformanceMetrics.measureRuntime(() -> Sort.bubbleSort1(arr1));
 

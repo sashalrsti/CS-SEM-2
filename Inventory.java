@@ -11,17 +11,7 @@ public class Inventory {
     // Method to add an item to the inventory
     public void addItem(Item item) {
         items.add(item);
-        System.out.println(item.getName() + " added to inventory.");
-    }
-
-    // Method to remove an item from the inventory
-    public void removeItem(Item item) {
-        if (items.contains(item)) {
-            items.remove(item);
-            System.out.println(item.getName() + " removed from inventory.");
-        } else {
-            System.out.println(item.getName() + " is not in the inventory.");
-        }
+        System.out.println(item.getName() + " has been added to your inventory.");
     }
 
     // Method to check if an item exists in the inventory
@@ -29,17 +19,29 @@ public class Inventory {
         return items.contains(item);
     }
 
+    // Method to remove an item from the inventory
+    public void removeItem(Item item) {
+        if (hasItem(item)) {
+            items.remove(item);
+            System.out.println(item.getName() + " has been removed from your inventory.");
+        } else {
+            System.out.println(item.getName() + " is not in your inventory.");
+        }
+    }
+
+
     // Method to display all items in the inventory
     public void displayItems() {
         if (items.isEmpty()) {
-            System.out.println("Nothing in inventory.");
+            System.out.println("Inventory is empty.");
         } else {
-            System.out.println("Inventory items:");
-            for (Item item : items) {
-                System.out.println("- " + item.getName());
+            System.out.println("Items in your inventory:");
+            for (int i = 0; i < items.size(); i++) {
+                System.out.println((i + 1) + ". " + items.get(i).getName());
             }
         }
     }
+
 
     // Method to get the total number of items
     public int getItemCount() {
