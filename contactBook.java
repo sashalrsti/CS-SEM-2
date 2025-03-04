@@ -140,7 +140,7 @@ public class contactBook {
                     contactManager.showContacts();
                     break;
                 case "Q":
-                    System.out.println("Byee!");
+                    System.out.println("Bye!");
                     scanner.close();
                     return;
                 default:
